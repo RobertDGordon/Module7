@@ -15,10 +15,11 @@ function ActivityFinder() {
         // setActivity(json.activity)
         if (!ignore) setActivity(json.activity)
       })
-      return () => {
-        ignore = true
-        console.log('clean up effect')
-      }
+    return () => {
+      ignore = true
+      console.log('clean up effect')
+    }
+
   }, [participants])
 
   return (

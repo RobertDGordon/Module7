@@ -8,12 +8,13 @@ function Clock() {
     let clockInterval = setInterval(() => tick(), 1000);
     console.log("Clock component mounted");
 
+    //clean up function - runs when unmounted
     return () => {
       console.log('Clock component unmounted')
       clearInterval(clockInterval)
     }
 
-  }, []);
+  }, []); // [] dependency array - controls when component updates
 
   const tick = () => {
     setDate(new Date());
